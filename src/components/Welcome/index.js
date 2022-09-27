@@ -2,7 +2,7 @@ import React from "react";
 
 import { MainTemplate, IconInput, ImgLogo, Content, ButtonStart} from './styles';
 
-function Welcome({ setSplashScreen }) {
+function Welcome({ setSplashScreen, setDeck }) {
   return (
     <MainTemplate>
       <ImgLogo src="/assets/img/logo.svg" alt="Logo" />

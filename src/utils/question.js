@@ -32,3 +32,26 @@ export const deckReact = [
     R: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
   },
 ];
+
+export const deckArray = [
+  {
+    Q: 'Adicionar um item ao final do Array',
+    R: 'var adicionar = frutas.push(Laranja);'
+  },
+  {
+    Q: 'Remover um item do final do Array',
+    R: 'var ultimo = frutas.pop();'
+  },
+  {
+    Q: 'Remover do início do Array',
+    R: 'var primeiro = frutas.shift();'
+  },
+  {
+    Q: 'Adicionar ao início do Array',
+    R: 'var adicionar = frutas.unshift(Morango)'
+  },
+  {
+    Q: 'Remover um item pela posição do índice',
+    R: 'var removedItem = frutas.splice(pos, 1);'
+  }
+];

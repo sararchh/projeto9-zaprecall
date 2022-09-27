@@ -4,7 +4,7 @@ import Header from '../Header';
 import Welcome from '../Welcome';
 
 import { MainTemplate } from './style';
-import { deckReact } from '../../utils/question';
+import { deckReact, deckArray } from '../../utils/question';
 import FlashcardsScreen from '../Flashcards';
 import FooterScreen from '../Footer';
 
@@ -18,7 +18,10 @@ function App() {
 
   if (splashScreen) {
     return (
-      <Welcome setSplashScreen={setSplashScreen} />
+      <Welcome 
+      setSplashScreen={setSplashScreen} 
+      setDeck={setDeck}
+      />
     )
   } else {
     return (
