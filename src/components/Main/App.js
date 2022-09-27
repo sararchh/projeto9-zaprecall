@@ -12,6 +12,7 @@ function App() {
   const [splashScreen, setSplashScreen] = React.useState(true);
   const [counter, setCounter] = React.useState(0);
   const [rowAnswer, setRowAnswer] = React.useState([]);
+  const [deck, setDeck] = React.useState(deckReact);
   const qtdQuestion = deckReact.length;
 
 
@@ -24,7 +25,7 @@ function App() {
       <MainTemplate>
         <Header />
         <div className='deck'>
-          {deckReact.map((item, index) => (
+          {deck.map((item, index) => (
             <FlashcardsScreen
               key={index}
               index={index}

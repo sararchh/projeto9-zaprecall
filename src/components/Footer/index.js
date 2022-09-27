@@ -18,8 +18,8 @@ function FooterScreen({ qtdQuestion, counter, rowAnswer }) {
 
   return (
     <Footer>
-
-      {finished === true ?
+      <p>{counter}/{qtdQuestion} CONCLUÍDOS</p>
+      {finished === true &&
         (<div>
           {rowAnswer.sort((a, b) => a.index - b.index).map((i, index) => {
             if (i.value === 'error') {
@@ -31,8 +31,6 @@ function FooterScreen({ qtdQuestion, counter, rowAnswer }) {
             }
           })}
         </div>)
-        :
-        <p>{counter}/{qtdQuestion} CONCLUÍDOS</p>
       }
 
     </Footer>
