@@ -15,7 +15,6 @@ function App() {
   const [deck, setDeck] = React.useState(deckReact);
   const qtdQuestion = deckReact.length;
 
-
   if (splashScreen) {
     return (
       <Welcome 
