@@ -1,41 +1,5 @@
 /* estilos gerais da aplicação */
 
-* {
-  box-sizing: border-box;
-  --cor-fundo: #FB6B6B;
-  --cor-fundo-card: #FFFFD4;
-  --cor-nao-lembrei: #FF3030;
-  --cor-quase-nao-lembrei: #FF922E;
-  --cor-zap: #2FBE34;
-  --preto: #333333;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--preto);
-  font-family: 'Recursive', sans-serif;
-  /* font-family: 'Righteous', cursive; */
-}
-
-.flashcard {
-  width: 300px;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-  margin: 10px 0px;
-  padding: 10px 10px;
-  cursor: pointer;
-  font-family: 'Recursive', cursive;
-}
-
 .flashcard.acerto {
   color: var(--cor-zap);
   text-decoration: line-through;
@@ -52,14 +16,14 @@ body {
 }
 
 
-.flashcard.aberto {
+/* .flashcard.aberto {
   min-height: 130px;
   display: flex;
   flex-direction: column;
   background-color: var(--cor-fundo-card);
   cursor: default;
   padding: 20px 10px;
-}
+} */
 
 .aberto div {
   width: 100%;
@@ -149,7 +113,7 @@ img.icone {
   flex-direction: column;
 }
 
-.deck .header {
+/* .deck .header {
   position: fixed;
   height: 80px;
   top: 0;
@@ -164,16 +128,16 @@ img.icone {
   font-family: "Righteous";
   z-index: 1;
   background-color: var(--cor-fundo);
-}
+} */
 
-.deck .main {
+/* .deck .main {
   max-height: 400px;
   overflow-y: auto;
 }
 
 .deck .main::-webkit-scrollbar {
   display: none;
-}
+} */
 
 
 .footer {
@@ -197,45 +161,10 @@ img.icone {
 
 
 
-.deck .header img {
+/* .deck .header img {
   width: 52px;
   height: 60px;
-}
-
-.home {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 1;
-  position: absolute;
-  background-color: var(--cor-fundo);
-}
+} */
 
 
 
-.home h1 {
-  font-family: "Righteous", cursive;
-  font-size: 36px;
-  color: white;
-}
-
-
-.home button {
-  width: 246px;
-  height: 54px;
-  padding: 16px 22px;
-  border-radius: 5px;
-  color: #D70900;
-  border: 1px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.home button:hover {
-  background-color: #cea2a0
-}

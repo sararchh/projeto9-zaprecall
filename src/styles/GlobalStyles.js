@@ -3,21 +3,13 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
-@font-face {
-  font-family: "Lauthan";
-  src: url("fonts/lauthan/Lauthan.ttf");
-}
-
 :root{
-  --background: #F4F6F8;
-  --shape: #ffffff;
-  --red: red;
-  --black: #000000;
-  --green: #4faf61;
-  --cinza-200: #a0aab6;
-  --cinza-300: #79818a;
-  --blue-100: #e1ecf4;
-  --blue-200: #39739d;
+  --cor-fundo: #FB6B6B;
+  --cor-fundo-card: #FFFFD4;
+  --cor-nao-lembrei: #FF3030;
+  --cor-quase-nao-lembrei: #FF922E;
+  --cor-zap: #2FBE34;
+  --preto: #333333;
 }
 
 *{
@@ -38,23 +30,32 @@ html {
 }
 
 body{
-background: var(--shape);
--webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--preto);
+  font-family: 'Righteous', cursive;
 }
 
 body, input, textarea, button {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Righteous', cursive;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6, strong {
-  font-weight: 600;
+  font-weight: 400;
+  font-family: 'Righteous', cursive;
 }
 
 button{
   cursor: pointer;
   outline: none;
   border: none;
+  font-family: 'Recursive', sans-serif;
 }
 
 a{
