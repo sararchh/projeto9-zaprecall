@@ -34,6 +34,43 @@ export const FlashcardQuestion = styled.div`
     font-size: 18px;
     line-height: 22px;
   }
+
+ 
+`;
+
+export const ContentButton = styled.div`
+   margin-top: 10px;
+   display: flex;
+   justify-content: space-between;
+
+  button {
+  width: 85.17px;
+  height: 40px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  button:hover {
+  filter: brightness(0.7)
+}
+
+  button:nth-child(1) {
+    background-color: var(--cor-nao-lembrei);
+}
+
+  button:nth-child(2) {
+    background-color: var(--cor-quase-nao-lembrei);
+}
+
+ button:nth-child(3) {
+    background-color: var(--cor-zap);
+}
 `;
 
 export const TitleQuestion = styled.h5`

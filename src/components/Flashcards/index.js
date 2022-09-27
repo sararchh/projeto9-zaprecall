@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Flashcard, TitleQuestion, IconPlayer, IconArrow, FlashcardQuestion } from './styles';
+import { Flashcard, TitleQuestion, IconPlayer, IconArrow, FlashcardQuestion, ContentButton } from './styles';
 
 function FlashcardsScreen({ questions, answer, index }) {
   const [step, setStep] = React.useState(0);
@@ -25,6 +25,11 @@ function FlashcardsScreen({ questions, answer, index }) {
         <>
           <FlashcardQuestion>
             <p>{answer}</p>
+            <ContentButton>
+              <button>Não lembrei</button>
+              <button>Quase não lembrei</button>
+              <button>Zap</button>
+            </ContentButton>
           </FlashcardQuestion>
 
         </>
