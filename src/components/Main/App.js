@@ -11,6 +11,7 @@ import FooterScreen from '../Footer';
 function App() {
   const [splashScreen, setSplashScreen] = React.useState(true);
   const [counter, setCounter] = React.useState(0);
+  const [rowAnswer, setRowAnswer] = React.useState([]);
   const qtdQuestion = deckReact.length;
 
 
@@ -31,12 +32,15 @@ function App() {
               answer={item.R}
               counter={counter}
               setCounter={setCounter}
+              rowAnswer={rowAnswer}
+              setRowAnswer={setRowAnswer}
             />
           ))}
         </div>
         <FooterScreen
           counter={counter}
           qtdQuestion={qtdQuestion}
+          rowAnswer={rowAnswer}
         />
       </MainTemplate>
     );

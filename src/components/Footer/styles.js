@@ -26,3 +26,9 @@ export const Footer = styled.footer`
     line-height: 22px;
   }
 `;
+
+export const Icon= styled.img`
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+`;
