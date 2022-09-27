@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Footer } from './styles';
 
-function FooterScreen({qtdQuestion}) {
+function FooterScreen({qtdQuestion, counter}) {
   return (
     <Footer>
-      <p>0/{qtdQuestion} CONCLUÍDOS</p>
+      <p>{counter}/{qtdQuestion} CONCLUÍDOS</p>
     </Footer>
   );
 }

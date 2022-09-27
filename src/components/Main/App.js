@@ -10,7 +10,9 @@ import FooterScreen from '../Footer';
 
 function App() {
   const [splashScreen, setSplashScreen] = React.useState(true);
+  const [counter, setCounter] = React.useState(0);
   const qtdQuestion = deckReact.length;
+
 
   if (splashScreen) {
     return (
@@ -22,10 +24,20 @@ function App() {
         <Header />
         <div className='deck'>
           {deckReact.map((item, index) => (
-            <FlashcardsScreen key={index} index={index} questions={item.Q} answer={item.R} />
+            <FlashcardsScreen
+              key={index}
+              index={index}
+              questions={item.Q}
+              answer={item.R}
+              counter={counter}
+              setCounter={setCounter}
+            />
           ))}
         </div>
-        <FooterScreen qtdQuestion={qtdQuestion}/>
+        <FooterScreen
+          counter={counter}
+          qtdQuestion={qtdQuestion}
+        />
       </MainTemplate>
     );
   }

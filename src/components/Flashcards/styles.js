@@ -13,6 +13,21 @@ export const Flashcard = styled.div`
   padding: 10px 10px;
   cursor: pointer;
   font-family: 'Recursive', cursive;
+
+  .hit {
+  color: var(--cor-zap);
+  text-decoration: line-through;
+}
+
+.help {
+  color: var(--cor-quase-nao-lembrei);
+  text-decoration: line-through;
+}
+
+.error {
+  color: var(--cor-nao-lembrei);
+  text-decoration: line-through;
+}
 `;
 
 export const FlashcardQuestion = styled.div`

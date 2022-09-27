@@ -25,7 +25,7 @@
   padding: 20px 10px;
 } */
 
-.aberto div {
+/* .aberto div {
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -50,7 +50,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-}
+} */
 
 /* .button {
   width: 100%;
@@ -82,7 +82,7 @@
 } */
 
 
-.icone,
+/* .icone,
 img.icone {
   color: var(--preto);
   width: 23px;
@@ -92,10 +92,10 @@ img.icone {
 .icone svg {
   width: 23px;
   height: 23px;
-}
+} */
 
 
-.icone .erro {
+/* .icone .erro {
   color: var(--nao-lembrei);
 }
 
@@ -105,7 +105,7 @@ img.icone {
 
 .icone .acerto {
   color: var(--cor-zap);
-}
+} */
 
 
 /* .deck {
