@@ -46,7 +46,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 
-select {
+select, input {
   width: 246px;
   height: 43px;
   border-radius: 5px;
@@ -61,7 +61,12 @@ select {
   line-height: 16px;
 
   color: #ADADAD;
+
 }
+
+input::placeholder {
+   color: #ADADAD;
+  }
 
 `;
 

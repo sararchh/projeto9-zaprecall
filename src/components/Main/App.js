@@ -9,19 +9,22 @@ import FlashcardsScreen from '../Flashcards';
 import FooterScreen from '../Footer';
 
 function App() {
-  const [splashScreen, setSplashScreen] = React.useState(true);
+  const [stepScreen, setStepScreen] = React.useState(0);
   const [counter, setCounter] = React.useState(0);
   const [rowAnswer, setRowAnswer] = React.useState([]);
   const [deck, setDeck] = React.useState(0);
+  const [qtdGoalZap, setQtdGoalZap] = React.useState(0);
 
-  if (splashScreen) {
+  if (stepScreen === 0 || stepScreen === 1) {
     return (
       <Welcome 
-      setSplashScreen={setSplashScreen} 
+      setStepScreen={setStepScreen} 
       setDeck={setDeck}
+      stepScreen={stepScreen}
+      setQtdGoalZap={setQtdGoalZap}
       />
     )
-  } else {
+  } else if (stepScreen === 2){
     return (
       <MainTemplate>
         <Header />
@@ -43,6 +46,8 @@ function App() {
           counter={counter}
           qtdQuestion={decks[deck].questions.length}
           rowAnswer={rowAnswer}
+          setQtdGoalZap={setQtdGoalZap}
+          qtdGoalZap={qtdGoalZap}
         />
       </MainTemplate>
     );

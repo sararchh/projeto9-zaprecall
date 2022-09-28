@@ -4,19 +4,29 @@ import { decks } from '../../utils/question';
 
 import { MainTemplate, ImgLogo, Content, ButtonStart } from './styles';
 
-function Welcome({ setSplashScreen, setDeck }) {
+function Welcome({ setStepScreen, setDeck, setQtdGoalZap, stepScreen }) {
 
   const handleSelectedDeck = (e) => {
     e.preventDefault();
 
-    let value = e.target.formDeck.value;
+    if (stepScreen === 0) {
+      let value = e.target.formDeck.value;
+      if (value === '') {
+        alert('Selecione um Deck')
+        return;
+      }
+      setStepScreen(1);
+      setDeck(value);
+    } else {
+      let inputZap = e.target.zap.value;
 
-    if (value === '') {
-      alert('Selecione um Deck') 
-      return;
-    } 
-    setSplashScreen(false);
-    setDeck(value);
+      if (inputZap === '0' || inputZap === '') {
+        alert('Digite um valor válido')
+        return;
+      }
+      setQtdGoalZap(Number(inputZap));
+      setStepScreen(2);
+    }
   }
 
   return (
@@ -26,12 +36,18 @@ function Welcome({ setSplashScreen, setDeck }) {
 
       <form onSubmit={handleSelectedDeck}>
         <Content>
-          <select name="formDeck" id="formDeck">
-            <option value="">Escolha seu Deck</option>
-            {decks.map((item, index)=> (
-              <option key={index} value={index}>{item.name}</option>
-            ))}
-          </select>
+
+          {stepScreen === 1 ?
+            (<input name='zap' type='number' placeholder='Digite sua meta de zaps...' />)
+            :
+            (<select name="formDeck" id="formDeck">
+              <option value="">Escolha seu Deck</option>
+              {decks.map((item, index) => (
+                <option key={index} value={index}>{item.name}</option>
+              ))}
+            </select>)
+          }
+
         </Content>
 
         <ButtonStart type="submit">Iniciar Recall!</ButtonStart>
