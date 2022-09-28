@@ -4,7 +4,7 @@ import Header from '../Header';
 import Welcome from '../Welcome';
 
 import { MainTemplate } from './style';
-import { deckReact, deckArray } from '../../utils/question';
+import { decks } from '../../utils/question';
 import FlashcardsScreen from '../Flashcards';
 import FooterScreen from '../Footer';
 
@@ -12,8 +12,7 @@ function App() {
   const [splashScreen, setSplashScreen] = React.useState(true);
   const [counter, setCounter] = React.useState(0);
   const [rowAnswer, setRowAnswer] = React.useState([]);
-  const [deck, setDeck] = React.useState(deckReact);
-  const qtdQuestion = deckReact.length;
+  const [deck, setDeck] = React.useState(0);
 
   if (splashScreen) {
     return (
@@ -27,7 +26,7 @@ function App() {
       <MainTemplate>
         <Header />
         <div className='deck'>
-          {deck.map((item, index) => (
+          {decks[deck].questions.map((item, index) => (
             <FlashcardsScreen
               key={index}
               index={index}
@@ -42,7 +41,7 @@ function App() {
         </div>
         <FooterScreen
           counter={counter}
-          qtdQuestion={qtdQuestion}
+          qtdQuestion={decks[deck].questions.length}
           rowAnswer={rowAnswer}
         />
       </MainTemplate>

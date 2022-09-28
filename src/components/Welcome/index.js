@@ -1,6 +1,6 @@
 import React from "react";
 
-import { deckReact, deckArray } from '../../utils/question';
+import { decks } from '../../utils/question';
 
 import { MainTemplate, ImgLogo, Content, ButtonStart } from './styles';
 
@@ -12,14 +12,11 @@ function Welcome({ setSplashScreen, setDeck }) {
     let value = e.target.formDeck.value;
 
     if (value === '') {
-      alert('Selecione um Deck')
-    } else if (value === 'deckReact') {
-      setSplashScreen(false);
-      setDeck(deckReact);
-    } else if (value === 'deckArray') {
-      setSplashScreen(false);
-      setDeck(deckArray);
-    }
+      alert('Selecione um Deck') 
+      return;
+    } 
+    setSplashScreen(false);
+    setDeck(value);
   }
 
   return (
@@ -31,8 +28,9 @@ function Welcome({ setSplashScreen, setDeck }) {
         <Content>
           <select name="formDeck" id="formDeck">
             <option value="">Escolha seu Deck</option>
-            <option value="deckReact">deckReact</option>
-            <option value="deckArray">deckArray</option>
+            {decks.map((item, index)=> (
+              <option key={index} value={index}>{item.name}</option>
+            ))}
           </select>
         </Content>
 
