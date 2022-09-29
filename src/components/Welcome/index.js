@@ -38,19 +38,19 @@ function Welcome({ setStepScreen, setDeck, setQtdGoalZap, stepScreen }) {
         <Content>
 
           {stepScreen === 1 ?
-            (<input name='zap' type='number' placeholder='Digite sua meta de zaps...' />)
+            (<input data-identifier="goals-input" name='zap' type='number' placeholder='Digite sua meta de zaps...' />)
             :
-            (<select name="formDeck" id="formDeck">
+            (<select data-identifier="deck-selector" name="formDeck" id="formDeck">
               <option value="">Escolha seu Deck</option>
               {decks.map((item, index) => (
-                <option key={index} value={index}>{item.name}</option>
+                <option data-identifier="deck-option" key={index} value={index}>{item.name}</option>
               ))}
             </select>)
           }
 
         </Content>
 
-        <ButtonStart type="submit">Iniciar Recall!</ButtonStart>
+        <ButtonStart type="submit" data-identifier="start-btn">Iniciar Recall!</ButtonStart>
       </form>
     </MainTemplate>
   )

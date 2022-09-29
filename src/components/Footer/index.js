@@ -3,7 +3,6 @@ import React from 'react';
 import { Footer, Icon } from './styles';
 
 function FooterScreen({ qtdQuestion, counter, rowAnswer, qtdGoalZap }) {
-  //qtdGoalZap meta de zap
 
   React.useEffect(() => {
     const filterZap = rowAnswer.filter((i) => i.value === 'hit');
@@ -14,12 +13,12 @@ function FooterScreen({ qtdQuestion, counter, rowAnswer, qtdGoalZap }) {
     } else if (rowAnswer.length === qtdQuestion && filterZap.length < qtdGoalZap) (
       alert('Putz')
     )
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowAnswer])
 
   return (
     <Footer>
-      <p>{counter}/{qtdQuestion} CONCLUÍDOS</p>
+      <p data-identifier="flashcard-counter">{counter}/{qtdQuestion} CONCLUÍDOS</p>
       <div>
         {rowAnswer.sort((a, b) => a.index - b.index).map((i, index) => {
           if (i.value === 'error') {

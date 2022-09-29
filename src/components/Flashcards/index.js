@@ -13,46 +13,46 @@ function FlashcardsScreen({ questions, answer, index, counter, setCounter, setRo
 
   const handleError = () => {
     setStep(3);
-    let newArray = [...rowAnswer, {index: index, value: 'error'}];
+    let newArray = [...rowAnswer, { index: index, value: 'error' }];
     setRowAnswer(newArray);
   }
 
   const handleHelp = () => {
     setStep(4);
-    let newArray = [...rowAnswer, {index: index, value: 'help'}];
+    let newArray = [...rowAnswer, { index: index, value: 'help' }];
     setRowAnswer(newArray);
   }
 
   const handleHit = () => {
     setStep(5);
-    let newArray = [...rowAnswer, {index: index, value: 'hit'}];
+    let newArray = [...rowAnswer, { index: index, value: 'hit' }];
     setRowAnswer(newArray);
   }
 
   return (
     <>
       {step === 0 && (
-        <Flashcard onClick={() => setStep(1)}>
-          <TitleQuestion>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/play-outline-icon.svg' alt='player' />
+        <Flashcard data-identifier="flashcard" >
+          <TitleQuestion data-identifier="flashcard-index-item">Pergunta {index + 1}</TitleQuestion>
+          <IconPlayer data-identifier="flashcard-show-btn" onClick={() => setStep(1)} src='./assets/img/play-outline-icon.svg' alt='player' />
         </Flashcard>
       )}
 
       {step === 1 && (
         <FlashcardQuestion>
           <p>{questions}</p>
-          <IconArrow src='./assets/img/setinha.svg' alt='setinha' onClick={handleFlipFlashcard} />
+          <IconArrow data-identifier="flashcard-turn-btn" src='./assets/img/setinha.svg' alt='setinha' onClick={handleFlipFlashcard} />
         </FlashcardQuestion>
       )}
 
       {step === 2 && (
         <>
           <FlashcardQuestion>
-            <p>{answer}</p>
+            <p ata-identifier="flashcard-answer">{answer}</p>
             <ContentButton>
-              <button onClick={handleError}>Não lembrei</button>
-              <button onClick={handleHelp}>Quase não lembrei</button>
-              <button onClick={handleHit}>Zap</button>
+              <button onClick={handleError} data-identifier="forgot-btn">Não lembrei</button>
+              <button onClick={handleHelp} data-identifier="almost-forgot-btn">Quase não lembrei</button>
+              <button onClick={handleHit} data-identifier="zap-btn">Zap</button>
             </ContentButton>
           </FlashcardQuestion>
         </>
@@ -60,22 +60,22 @@ function FlashcardsScreen({ questions, answer, index, counter, setCounter, setRo
 
       {step === 3 && (
         <Flashcard>
-          <TitleQuestion className='error'>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/close-circle-icon.svg' alt='player' />
+          <TitleQuestion data-identifier="flashcard-index-item" className='error'>Pergunta {index + 1}</TitleQuestion>
+          <IconPlayer src='./assets/img/close-circle-icon.svg' alt='icon-error' data-identifier="flashcard-status" />
         </Flashcard>
       )}
-      
+
       {step === 4 && (
         <Flashcard>
-          <TitleQuestion className='help'>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/help-circle-icon.svg' alt='player' />
+          <TitleQuestion data-identifier="flashcard-index-item" className='help'>Pergunta {index + 1}</TitleQuestion>
+          <IconPlayer src='./assets/img/help-circle-icon.svg' alt='icon-help' data-identifier="flashcard-status"/>
         </Flashcard>
       )}
-      
+
       {step === 5 && (
         <Flashcard>
-          <TitleQuestion className='hit'>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/checkmark-circle-icon.svg' alt='player' />
+          <TitleQuestion data-identifier="flashcard-index-item" className='hit'>Pergunta {index + 1}</TitleQuestion>
+          <IconPlayer src='./assets/img/checkmark-circle-icon.svg' alt='icon-hit' data-identifier="flashcard-status" />
         </Flashcard>
       )}
     </>
