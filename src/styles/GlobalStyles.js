@@ -5,11 +5,14 @@ export const GlobalStyle = createGlobalStyle`
 
 :root{
   --cor-fundo: #FB6B6B;
+  --cor-modal: #ba4c57;
   --cor-fundo-card: #FFFFD4;
   --cor-nao-lembrei: #FF3030;
   --cor-quase-nao-lembrei: #FF922E;
   --cor-zap: #2FBE34;
   --preto: #333333;
+  --gray: #EEEEEE98;
+  --white: #FFFFFF;
 }
 
 *{

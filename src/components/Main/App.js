@@ -17,14 +17,16 @@ function App() {
 
   if (stepScreen === 0 || stepScreen === 1) {
     return (
-      <Welcome 
-      setStepScreen={setStepScreen} 
-      setDeck={setDeck}
-      stepScreen={stepScreen}
-      setQtdGoalZap={setQtdGoalZap}
-      />
+      <>
+        <Welcome
+          setStepScreen={setStepScreen}
+          setDeck={setDeck}
+          stepScreen={stepScreen}
+          setQtdGoalZap={setQtdGoalZap}
+        />
+      </>
     )
-  } else if (stepScreen === 2){
+  } else if (stepScreen === 2) {
     return (
       <MainTemplate>
         <Header />
