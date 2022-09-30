@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Flashcard, TitleQuestion, IconPlayer, IconArrow, FlashcardQuestion, ContentButton } from './styles';
+import { Flashcard, TitleQuestion, Icon, IconArrow, FlashcardQuestion, ContentButton } from './styles';
 
 function FlashcardsScreen({ questions, answer, index, counter, setCounter, setRowAnswer, rowAnswer }) {
   const [step, setStep] = React.useState(0);
@@ -34,7 +34,7 @@ function FlashcardsScreen({ questions, answer, index, counter, setCounter, setRo
       {step === 0 && (
         <Flashcard data-identifier="flashcard" >
           <TitleQuestion data-identifier="flashcard-index-item">Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer data-identifier="flashcard-show-btn" onClick={() => setStep(1)} src='./assets/img/play-outline-icon.svg' alt='player' />
+          <Icon data-identifier="flashcard-show-btn" onClick={() => setStep(1)} src='./assets/img/play-outline-icon.svg' alt='player' />
         </Flashcard>
       )}
 
@@ -61,21 +61,21 @@ function FlashcardsScreen({ questions, answer, index, counter, setCounter, setRo
       {step === 3 && (
         <Flashcard>
           <TitleQuestion data-identifier="flashcard-index-item" className='error'>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/close-circle-icon.svg' alt='icon-error' data-identifier="flashcard-status" />
+          <Icon src='./assets/img/close-circle-icon.svg' alt='icon-error' data-identifier="flashcard-status" />
         </Flashcard>
       )}
 
       {step === 4 && (
         <Flashcard>
           <TitleQuestion data-identifier="flashcard-index-item" className='help'>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/help-circle-icon.svg' alt='icon-help' data-identifier="flashcard-status"/>
+          <Icon src='./assets/img/help-circle-icon.svg' alt='icon-help' data-identifier="flashcard-status"/>
         </Flashcard>
       )}
 
       {step === 5 && (
         <Flashcard>
           <TitleQuestion data-identifier="flashcard-index-item" className='hit'>Pergunta {index + 1}</TitleQuestion>
-          <IconPlayer src='./assets/img/checkmark-circle-icon.svg' alt='icon-hit' data-identifier="flashcard-status" />
+          <Icon src='./assets/img/checkmark-circle-icon.svg' alt='icon-hit' data-identifier="flashcard-status" />
         </Flashcard>
       )}
     </>

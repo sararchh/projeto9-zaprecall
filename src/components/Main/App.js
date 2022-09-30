@@ -15,6 +15,13 @@ function App() {
   const [deck, setDeck] = React.useState(0);
   const [qtdGoalZap, setQtdGoalZap] = React.useState(0);
 
+  const handleRestartZap = () => {
+    setStepScreen(0);
+    setCounter(0);
+    setQtdGoalZap(0);
+    setRowAnswer([]);
+  }
+
   if (stepScreen === 0 || stepScreen === 1) {
     return (
       <>
@@ -50,6 +57,7 @@ function App() {
           rowAnswer={rowAnswer}
           setQtdGoalZap={setQtdGoalZap}
           qtdGoalZap={qtdGoalZap}
+          handleRestartZap={handleRestartZap}
         />
       </MainTemplate>
     );

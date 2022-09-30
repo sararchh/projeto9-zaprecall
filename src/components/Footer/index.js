@@ -3,7 +3,7 @@ import ModalScreen from '../ModalScreen';
 
 import { Footer, Icon } from './styles';
 
-function FooterScreen({ qtdQuestion, counter, rowAnswer, qtdGoalZap }) {
+function FooterScreen({ qtdQuestion, counter, rowAnswer, qtdGoalZap, handleRestartZap }) {
   const [showModal, setShowModal] = React.useState(false);
   const [text, setText] = React.useState('Parabéns');
 
@@ -21,7 +21,7 @@ function FooterScreen({ qtdQuestion, counter, rowAnswer, qtdGoalZap }) {
 
   return (
     <>
-      {showModal && <ModalScreen text={text} />}
+      {showModal && <ModalScreen text={text} handleRestartZap={handleRestartZap}/>}
 
       <Footer>
         <p data-identifier="flashcard-counter">{counter}/{qtdQuestion} CONCLUÍDOS</p>

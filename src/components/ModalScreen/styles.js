@@ -38,4 +38,29 @@ export const Modal = styled.div`
   h1 {
     font-size: 50px;
   }
+
+  button {
+  width: 120px;
+  height: 40px;
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--cor-zap);
+  }
+
+  button:hover {
+  filter: brightness(0.7);
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  margin: 0 2px 4px 3px;
+  }
 `;

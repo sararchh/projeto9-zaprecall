@@ -95,7 +95,7 @@ export const TitleQuestion = styled.h5`
     font-family: 'Recursive', sans-serif;
 `;
 
-export const IconPlayer = styled.img`
+export const Icon = styled.img`
     width: 20px;
     height: 20px;
 `;
